@@ -48,16 +48,16 @@ function createFeaturesChart() {
         data: {
             labels: translatedFeatures,
             datasets: [{
-                label: 'Importancia',
+                label: 'Correlación',
                 data: importances,
                 backgroundColor: [
-                    'rgba(42, 111, 219, 0.7)',
-                    'rgba(42, 111, 219, 0.85)',
-                    'rgba(42, 111, 219, 0.5)',
-                    'rgba(42, 111, 219, 0.6)',
-                    'rgba(42, 111, 219, 0.55)'
+                    'rgba(219, 125, 42, 0.7)',
+                    'rgba(219, 125, 42, 0.95)',
+                    'rgba(219, 125, 42, 0.6)',
+                    'rgba(219, 125, 42, 0.4)',
+                    'rgba(219, 125, 42, 0.33)',
                 ],
-                borderColor: 'rgba(42, 111, 219, 1)',
+                borderColor: '#f39c12',
                 borderWidth: 1
             }]
         },

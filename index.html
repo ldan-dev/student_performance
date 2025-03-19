@@ -18,7 +18,10 @@
     <div class="container">
         <header>
             <h1>Rendimiento Estudiantil</h1>
-            <p>Modelo de inteligencia artificial para predecir rendimiento académico con base en los datos de Student_Performance </p>
+            <p>Modelo de regresión Lineal
+                <br>
+                Universidad de Guanajuato - Campus Irapuato-Salamanca 
+            </p>
         </header>
 
         <main>
@@ -38,8 +41,8 @@
                 <form id="predictionForm">
                     <div class="form-group">
                         <label for="hoursStudied">Horas de estudio:</label>
-                        <input type="number" id="hoursStudied" min="0" max="12" step="0.5" value="7" required>
-                        <span class="input-range">0-12 horas</span>
+                        <input type="number" id="hoursStudied" min="0" max="20" step="0.5" value="7" required>
+                        <span class="input-range">0-20 horas</span>
                     </div>
 
                     <div class="form-group">
@@ -64,8 +67,8 @@
 
                     <div class="form-group">
                         <label for="papersPracticed">Exámenes de práctica realizados:</label>
-                        <input type="number" id="papersPracticed" min="0" max="10" step="1" value="3" required>
-                        <span class="input-range">0-10 exámenes</span>
+                        <input type="number" id="papersPracticed" min="0" step="1" value="3" required>
+                        <!-- <span class="input-range">0-10 exámenes</span> -->
                     </div>
 
                     <button type="submit" class="btn-predict">Predecir rendimiento</button>
@@ -105,6 +108,12 @@
                 Universidad de Guanajuato - Campus Irapuato-Salamanca <br>
                 UDA: Probabilidad <br>
             </p>
+
+            <div class="footer-logo">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fugto.mx%2Fcampusirapuatosalamanca%2Fimages%2Fescudos%2Fdicis_png.png&f=1&nofb=1&ipt=b573c2bbbf60b482c67403316aed4ffa2f6c6c8eb42b7377665b7912c045aefb&ipo=images" 
+                     alt="Logo DICIS UG" 
+                     style="display: block; margin: 10px auto; max-width: 550px; height: auto;">
+            </div>
         </footer>
     </div>
 

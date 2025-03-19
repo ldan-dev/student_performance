@@ -83,33 +83,31 @@ function createFeaturesChart() {
 
 function predictPerformance(inputs) {
     // Convert inputs to numeric values
-    const numericInputs = inputs.map(val => parseFloat(val));
+    const [hoursStudied, previousScores, extracurricularActivities, sleepHours, sampleQuestionPapersPracticed] = 
+        inputs.map(val => parseFloat(val));
     
-    // Extract feature names and their scaling parameters
-    const features = modelInfo.feature_names;
-    const means = modelInfo.scaling_means;
-    const stds = modelInfo.scaling_stds;
-    
-    // Scale the inputs: (input - mean) / std
-    const scaledInputs = numericInputs.map((val, i) => (val - means[i]) / stds[i]);
-    
-    // Apply the feature importances (weights)
-    let prediction = 0;
-    for (let i = 0; i < features.length; i++) {
-        const featureName = features[i];
-        const importance = modelInfo.feature_importances[featureName];
-        prediction += scaledInputs[i] * importance;
-    }
-    
-    // Convert prediction to a 0-100 scale
-    // Assuming the base prediction is around 70 with adjustments from feature impacts
-    let finalPrediction = 70 + prediction;
-    
-    // Ensure prediction stays within 0-100 range
-    finalPrediction = Math.min(Math.max(finalPrediction, 0), 100);
+    // Estos valores se obtienen del archivo model_coefficients.json
+    const coefficients = {
+        "Hours Studied": 2.852982053532593,
+        "Previous Scores": 1.018434192334054,
+        "Extracurricular Activities": 0.6128975819601041,
+        "Sleep Hours": 0.4805597547118859,
+        "Sample Question Papers Practiced": 0.19380214006990196,
+        "intercept": -34.07558809191359
+    };
+
+    let prediction = coefficients.intercept;
+    prediction += coefficients["Hours Studied"] * hoursStudied;
+    prediction += coefficients["Previous Scores"] * previousScores;
+    prediction += coefficients["Extracurricular Activities"] * extracurricularActivities;
+    prediction += coefficients["Sleep Hours"] * sleepHours;
+    prediction += coefficients["Sample Question Papers Practiced"] * sampleQuestionPapersPracticed;
+
+    // Limitar la predicción entre 0 y 100
+    prediction = Math.max(0, Math.min(100, prediction));
     
     // Return rounded to 1 decimal place
-    return finalPrediction.toFixed(1);
+    return prediction.toFixed(1);
 }
 
 function setupForm() {
@@ -170,15 +168,21 @@ function updateGauge(prediction) {
     gaugeImage.style.transformOrigin = 'bottom center';
     gaugeImage.style.transition = 'transform 1s ease-out';
     
-    if (predictionValue >= 74) {
-        gaugeImage.src = 'gauge-green.png'; // Green gauge
-        gaugeImage.alt = 'Excelente rendimiento';
+    if (predictionValue >= 90) {
+        gaugeImage.src = 'gauge-1.png';
+        gaugeImage.alt = 'Rendimiento excepcional';
+    } else if (predictionValue >= 80) {
+        gaugeImage.src = 'gauge-2.png';
+        gaugeImage.alt = 'Rendimiento muy bueno';
+    } else if (predictionValue >= 70) {
+        gaugeImage.src = 'gauge-3.png';
+        gaugeImage.alt = 'Rendimiento adecuado';
     } else if (predictionValue >= 60) {
-        gaugeImage.src = 'gauge-yellow.png'; // Yellow gauge
-        gaugeImage.alt = 'Buen rendimiento';
+        gaugeImage.src = 'gauge-4.png';
+        gaugeImage.alt = 'Rendimiento suficiente';
     } else {
-        gaugeImage.src = 'gauge-red.png'; // Red gauge
-        gaugeImage.alt = 'Rendimiento bajo';
+        gaugeImage.src = 'gauge-5.png';
+        gaugeImage.alt = 'Rendimiento por debajo de lo esperado';
     }
     
     // Add the image to the gauge

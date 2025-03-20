@@ -27,13 +27,32 @@
         <main>
             <section class="model-info">
                 <h2>Acerca del modelo</h2>
-                <p>Este modelo utiliza aprendizaje automático para predecir el índice de rendimiento de un estudiante basado en 5 características clave.</p>
+                <p>Este modelo utiliza aprendizaje automático para predecir el índice de rendimiento de un estudiante basado en 5 características clave, las cuales son: 
+                    <strong>Horas de estudio, Calificaciones previas, Actividades extracurriculares, Horas de sueño diarias y Exámenes de práctica realizados.</strong>
+                </p>
                 <div class="feature-importance">
                     <h3>Correlación con el rendimiento </h3>
                     <div id="featuresChart" class="chart-container">
                         <!-- El gráfico se insertará aquí con JavaScript -->
                     </div>
                 </div>
+
+                <div class="model-evaluation">
+                    <h3>Evaluación del Modelo</h3>
+                    <div class="metrics-container">
+                        <div class="metric">
+                            <strong class="metric-name">Error Cuadrático Medio (MSE):</strong>
+                            <strong class="metric-value">4.1514</strong>
+                            <p class="metric-description">Mide el promedio de los errores al cuadrado entre las predicciones y los valores reales. Un valor más bajo indica mejor precisión.</p>
+                        </div>
+                        <div class="metric">
+                            <strong class="metric-name">Coeficiente de Determinación (R²):</strong>
+                            <strong class="metric-value">0.9888</strong>
+                            <p class="metric-description">Indica la proporción de la varianza en la variable dependiente que es predecible a partir de las variables independientes. Un valor cercano a 1 representa un excelente ajuste del modelo.</p>
+                        </div>
+                    </div>
+                </div>
+
             </section>
 
             <section class="prediction-form">

@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="[[escudo-png.png](http://drh.ugto.mx/assets/escudo-ug-vertical.png)](http://drh.ugto.mx/assets/escudo-ug-vertical.png)" alt="Logo UG" width="250" >
+    <img src="<img width="1654" height="1407" alt="escudo-ug-vertical" src="https://github.com/user-attachments/assets/19d47f04-ba88-4e29-8737-3a8e8f39a6cd" />" alt="Logo UG" width="250" >
   </a>
 
   <h3 align="center">Object Oriented Programming I (IILI06107)</h3>

@@ -15,14 +15,6 @@
 
 ---
 
-## Contact Information
-
-- [ld.avinaneri@ugto.mx](mailto:ld.avinaneri@ugto.mx)
-- [daniel.avina.neri@gmail.com](mailto:daniel.avina.neri@gmail.com)
-- [GitHub Profile](https://github.com/ldan-dev)
-
----
-
 ## Project Overview
 
 **student_performance** is a web application designed to predict student performance using a linear regression model based on key academic and lifestyle factors. The project is developed as part of the Bachelor’s Degree in Data Engineering and Artificial Intelligence at Universidad de Guanajuato, Campus Irapuato-Salamanca.
@@ -76,6 +68,14 @@ Users can input relevant data (study hours, previous scores, extracurricular act
 
 ---
 
+
+
+## Contact Information
+
+- [ld.avinaneri@ugto.mx](mailto:ld.avinaneri@ugto.mx)
+- [daniel.avina.neri@gmail.com](mailto:daniel.avina.neri@gmail.com)
+- [GitHub Profile](https://github.com/ldan-dev)
+---
 ## License & Attribution
 
 Developed by Leonardo Daniel Aviña Neri  
